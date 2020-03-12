@@ -67,7 +67,7 @@ def join(playerId, gameId):
     res = get(url + '/game/play?playerId=' + str(playerId) + '&gameId=' + str(gameId))
     _game = res['result']
     _gameId = _game['id']
-    print("Game id: ", _gameId)
+    print("Game id: ", (_gameId))
     _playerIndex = res['playerIndex']
     return res
 
