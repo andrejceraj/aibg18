@@ -46,6 +46,6 @@ def main(bot_type1, player_name1, bot_type2, player_name2):
 	game = Connect4(players=[bot1, bot2])
 	game.start_game()
 
-
-bot_type1, player_name1, bot_type2, player_name2 = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
-main(bot_type1, player_name1, bot_type2, player_name2)
+if __name__ == '__main__':
+	bot_type1, player_name1, bot_type2, player_name2 = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+	main(bot_type1, player_name1, bot_type2, player_name2)
