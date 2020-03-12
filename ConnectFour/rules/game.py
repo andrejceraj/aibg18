@@ -1,9 +1,9 @@
 import sys
 import time
 
-from table import *
-from game import *
-from bot.BotFactories import BotFactory
+from rules.game import *
+from bot.bot_factories import BotFactory
+from rules.table import *
 
 
 class Connect4(object):
