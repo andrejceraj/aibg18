@@ -1,2 +1,6 @@
 
 .idea/
+
+ConnectFour/bot/__pycache__/
+
+ConnectFour/rules/__pycache__/

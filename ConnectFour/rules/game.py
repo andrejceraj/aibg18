@@ -27,10 +27,8 @@ class Connect4(object):
 			print(self.table)
 			player = self.players[turn % 2]
 
-			move = player.get_player_move() - 1
-
-			while not self.table.insert(player, move):
-				move = player.get_player_move() - 1
+			move = player.get_player_move(self.table) - 1
+			self.table.insert(player, move)
 
 			if self.table.check_win(move):
 				break

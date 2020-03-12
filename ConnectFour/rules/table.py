@@ -85,6 +85,9 @@ class Table(object):
 
 	def check_win(self, j):
 
+		if len(self.moves) == self.row_size * self.col_size:
+			return True
+
 		for i in range(self.row_size):
 			if not self.table[i][j]:
 				return self.check_horizontal(i-1, j) or self.check_vertical(i-1, j) or self.check_diagonal(i-1, j)

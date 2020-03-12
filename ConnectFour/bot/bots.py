@@ -16,9 +16,11 @@ class Bot(object):
 
 		return "Player: " + self.name + ", ID: " + self.id
 
-	def get_player_move(self):
+	def get_player_move(self, table):
 
 		move = randint(0, 6) + 1
+		while table.table[table.row_size - 1][move - 1]:
+			move = randint(0, 6) + 1
 		print(self.name + " je odigrao " + str(move))
 		return move
 
