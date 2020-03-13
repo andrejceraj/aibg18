@@ -90,17 +90,17 @@ class Table(object):
 
 		for i in range(self.row_size):
 			if not self.table[i][j]:
-				return self.check_horizontal(i-1, j) or self.check_vertical(i-1, j) or self.check_diagonal(i-1, j)
+				return self.check_horizontal(i-1, j) or self.check_vertical(i-1, j) or self.check_vertical(i-1, j)
 
 	def check_horizontal(self, i, j):
 
 		W_limit = 0 if j < 3 else j - 3
-		E_limit = self.col_size if j > 3 else j + 4
+		E_limit = self.col_size - 1 if j > 3 else j + 3
 
 		cnt = 1
 		val = self.table[i][j].id_val
 
-		for k in range(W_limit, j):
+		for k in reversed(range(W_limit, j)):
 			if not self.table[i][k]:
 				break
 
@@ -108,7 +108,6 @@ class Table(object):
 				cnt += 1
 
 		for k in range(j+1, E_limit):
-
 			if not self.table[i][k]:
 				break
 
@@ -136,7 +135,7 @@ class Table(object):
 	def check_diagonal(self, i, j):
 
 		W_limit = 0 if j < 3 else j - 3
-		E_limit = self.col_size if j > 3 else j + 3
+		E_limit = self.col_size - 1 if j > 3 else j + 4
 
 		S_limit = 0 if i < 3 else i - 3
 
